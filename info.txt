@@ -1,0 +1,11 @@
+I am just going to practise some basic stuff:
+
+vim file.txt         to create new txt file
+git status           anything needs to be commited?
+git clone            to get it from github to my Mac
+
+
+
+For now I feel terribly stupid. But hey ho, let's see how it goes tomorrow.
+
+
