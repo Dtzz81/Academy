@@ -2,9 +2,11 @@ def view_next_conway_generation(generation)
   next_generation = []
   generation.each do |row|
     future_row = []
+    current_column = 0
     row.each do |cell|
-      living_neighbours = number_of_living_neighbours(generation,row:0,column:0)
+      living_neighbours = number_of_living_neighbours(generation,row:0,column:current_column)
       future_row << conway_rule(cell,living_neighbours)
+      current_column += 1
     end
     next_generation << future_row
   end
@@ -12,18 +14,18 @@ def view_next_conway_generation(generation)
 end
 
 def conway_rule(cell,number_of_living_neighbours)
+  
   if cell == :empty
     if number_of_living_neighbours <= 2 || number_of_living_neighbours > 3
       cell = :empty
-    elsif number_of_living_neighbours = 3
+    else
       cell = :alive
     end
     
-
   elsif cell == :alive
     if number_of_living_neighbours <= 1 || number_of_living_neighbours > 3
       cell = :empty
-    elsif number_of_living_neighbours = 2 || number_of_living_neighbours = 3
+    else
       cell = :alive
       end
   end
